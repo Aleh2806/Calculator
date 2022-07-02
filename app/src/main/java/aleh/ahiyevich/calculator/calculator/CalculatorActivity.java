@@ -1,13 +1,8 @@
-package aleh.ahiyevich.calculator.ui;
+package aleh.ahiyevich.calculator.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import aleh.ahiyevich.calculator.R;
 

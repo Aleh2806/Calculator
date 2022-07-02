@@ -1,4 +1,4 @@
-package aleh.ahiyevich.calculator.ui.model;
+package aleh.ahiyevich.calculator.calculator.model;
 
 public enum Operator {
 
