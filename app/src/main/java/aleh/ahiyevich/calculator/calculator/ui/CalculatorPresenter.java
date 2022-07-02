@@ -51,6 +51,6 @@ public class CalculatorPresenter {
 
     public void onEqualsPressed() {
         resultEquals = calculator.perform(argOne, argTwo, selectedOperator);
-        view.showResult(String.valueOf(argOne));
+        view.showResult(String.valueOf(resultEquals));
     }
 }
