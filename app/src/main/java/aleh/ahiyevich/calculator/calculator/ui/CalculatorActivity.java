@@ -12,6 +12,7 @@ import java.util.Map;
 import aleh.ahiyevich.calculator.R;
 import aleh.ahiyevich.calculator.calculator.model.CalculatorImpl;
 import aleh.ahiyevich.calculator.calculator.model.Operator;
+import aleh.ahiyevich.calculator.calculator.presenter.CalculatorPresenter;
 
 public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
 

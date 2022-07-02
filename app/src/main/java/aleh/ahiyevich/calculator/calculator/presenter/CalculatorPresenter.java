@@ -1,9 +1,10 @@
-package aleh.ahiyevich.calculator.calculator.ui;
+package aleh.ahiyevich.calculator.calculator.presenter;
 
 import java.text.DecimalFormat;
 
 import aleh.ahiyevich.calculator.calculator.model.Calculator;
 import aleh.ahiyevich.calculator.calculator.model.Operator;
+import aleh.ahiyevich.calculator.calculator.ui.CalculatorView;
 
 public class CalculatorPresenter {
 
