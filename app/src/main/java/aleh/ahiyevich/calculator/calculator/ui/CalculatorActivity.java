@@ -1,4 +1,4 @@
-package aleh.ahiyevich.calculator.calculator;
+package aleh.ahiyevich.calculator.calculator.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
