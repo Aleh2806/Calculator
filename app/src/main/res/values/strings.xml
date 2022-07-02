@@ -19,5 +19,5 @@
     <string name="key_clear">C</string>
     <string name="key_delete">Del</string>
     <string name="key_procent">%</string>
-    <string name="start_calculator">0.0</string>
+    <string name="start_calculator">""</string>
 </resources>

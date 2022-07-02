@@ -8,14 +8,13 @@ import aleh.ahiyevich.calculator.calculator.ui.CalculatorView;
 
 public class CalculatorPresenter {
 
-    private CalculatorView view;
-    private Calculator calculator;
-    private DecimalFormat formatter = new DecimalFormat();
+    private final CalculatorView view;
+    private final Calculator calculator;
+    private final DecimalFormat formatter = new DecimalFormat();
 
     private double argOne;
     private Double argTwo;
     private Operator selectedOperator;
-    private double resultEquals;
 
     public CalculatorPresenter(CalculatorView view, Calculator calculator) {
         this.view = view;
@@ -28,14 +27,10 @@ public class CalculatorPresenter {
         if (argTwo == null) {
             argOne = argOne * 10 + digit;
             showFormatted(argOne);
-
         } else {
             argTwo = argTwo * 10 + digit;
             showFormatted(argTwo);
-
         }
-
-
     }
 
 
@@ -55,7 +50,7 @@ public class CalculatorPresenter {
 
 
     public void onEqualsPressed() {
-        resultEquals = calculator.perform(argOne, argTwo, selectedOperator);
+        double resultEquals = calculator.perform(argOne, argTwo, selectedOperator);
         showFormatted(resultEquals);
     }
 
