@@ -1,20 +1,24 @@
 package aleh.ahiyevich.calculator.calculator.presenter;
 
+import org.w3c.dom.Text;
+
 import java.text.DecimalFormat;
 
 import aleh.ahiyevich.calculator.calculator.model.Calculator;
 import aleh.ahiyevich.calculator.calculator.model.Operator;
+import aleh.ahiyevich.calculator.calculator.ui.CalculatorActivity;
 import aleh.ahiyevich.calculator.calculator.ui.CalculatorView;
 
 public class CalculatorPresenter {
 
     private final CalculatorView view;
     private final Calculator calculator;
-    private final DecimalFormat formatter = new DecimalFormat();
+    private final DecimalFormat formatter = new DecimalFormat("#.##");
 
     private double argOne;
     private Double argTwo;
     private Operator selectedOperator;
+
 
     public CalculatorPresenter(CalculatorView view, Calculator calculator) {
         this.view = view;
@@ -45,7 +49,8 @@ public class CalculatorPresenter {
     }
 
 
-    public void onDotPressed(Character dot) {
+    public void onDotPressed() {
+
     }
 
 

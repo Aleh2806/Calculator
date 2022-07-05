@@ -82,14 +82,12 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.key_div).setOnClickListener(operatorOnClickListener);
 
 
-        Map<Integer, Character> dot = new HashMap<>();
-        dot.put(R.id.key_dot, '.');
 
 
         findViewById(R.id.key_dot).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.onDotPressed(dot.get(view.getId()));
+                presenter.onDotPressed();
             }
         });
 
