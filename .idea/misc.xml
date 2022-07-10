@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/btn_style.xml" value="0.203" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/gradient.xml" value="0.1355" />
+        <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/rectangle.xml" value="0.203" />
+        <entry key="..\:/Home_works/Calculator/app/src/main/res/layout-land/activity_calculator.xml" value="0.25" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/activity_calculator.xml" value="0.25" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/second_variant.xml" value="0.25" />
