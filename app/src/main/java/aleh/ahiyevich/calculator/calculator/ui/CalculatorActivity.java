@@ -3,6 +3,7 @@ package aleh.ahiyevich.calculator.calculator.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,16 +17,17 @@ import aleh.ahiyevich.calculator.calculator.presenter.CalculatorPresenter;
 
 public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
 
-    private TextView resultTxt;
+    private TextView resultView;
 
     private CalculatorPresenter presenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        resultTxt = findViewById(R.id.result);
+        resultView = findViewById(R.id.result);
 
         presenter = new CalculatorPresenter(CalculatorActivity.this, new CalculatorImpl());
 
@@ -82,12 +84,19 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.key_div).setOnClickListener(operatorOnClickListener);
 
 
-
-
         findViewById(R.id.key_dot).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.onDotPressed();
+
+
+                String dot = resultView.getText().toString();
+                if (!dot.contains(".")) {
+                    dot += ".";
+                } else if(dot.contains(".")){
+                    dot = dot;
+                }
+                showResult(dot);
+
             }
         });
 
@@ -104,7 +113,13 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
 
     @Override
-    public void showResult(String result) {
-        resultTxt.setText(result);
+    public String showResult(String result) {
+        resultView.setText(result);
+        return result;
+    }
+
+    public double isDouble(String value) {
+        return Double.parseDouble(value);
     }
 }
+

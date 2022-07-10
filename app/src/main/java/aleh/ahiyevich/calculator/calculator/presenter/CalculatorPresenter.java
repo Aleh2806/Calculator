@@ -1,6 +1,6 @@
 package aleh.ahiyevich.calculator.calculator.presenter;
 
-import org.w3c.dom.Text;
+import android.view.View;
 
 import java.text.DecimalFormat;
 
@@ -11,13 +11,16 @@ import aleh.ahiyevich.calculator.calculator.ui.CalculatorView;
 
 public class CalculatorPresenter {
 
+
     private final CalculatorView view;
     private final Calculator calculator;
     private final DecimalFormat formatter = new DecimalFormat("#.##");
 
+
     private double argOne;
     private Double argTwo;
     private Operator selectedOperator;
+    private CalculatorView view1;
 
 
     public CalculatorPresenter(CalculatorView view, Calculator calculator) {
@@ -59,7 +62,7 @@ public class CalculatorPresenter {
         showFormatted(resultEquals);
     }
 
-    public void showFormatted(double value){
+    public void showFormatted(double value) {
         view.showResult(formatter.format(value));
     }
 }
