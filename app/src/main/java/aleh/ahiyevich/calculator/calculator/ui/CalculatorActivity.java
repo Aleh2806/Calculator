@@ -33,7 +33,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
         // Сохраняем настройки выбора пользователем темы
         SharedPreferences sharedPreferences = getSharedPreferences("themes.xml", Context.MODE_PRIVATE);
-        // Сохраняем выбранную тему в переменную
+        // Сохраняем дефолтную тему в переменную
         int theme = sharedPreferences.getInt("theme", R.style.Theme_MyCalc);
         // Изменяем тему до отрисовки Активити,т.к. после отрисовки Активити, отрисовка темы невозможна
         setTheme(theme);
