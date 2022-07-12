@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+                <!--Описываем стили-->
+    <style name="CalcButton">
+        <item name="backgroundTint">#00E2FF</item>
+        <item name="android:textSize">@dimen/size_text_btn</item>
+        <item name="strokeColor">@color/purple</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cornerRadius">35dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="CalcButton.Operatop">
+        <item name="backgroundTint">@color/light_green</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+
+    <style name="CalcButton.Equals">
+        <item name="backgroundTint">#023FF6</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="CalcButton.V2">
+        <item name="backgroundTint">#FFEB3B</item>
+    </style>
+
+
+    <style name="CalcButton.V3">
+        <item name="backgroundTint">#E91E63</item>
+    </style>
+
+
+</resources>

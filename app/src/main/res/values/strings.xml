@@ -16,5 +16,7 @@
     <string name="key_minus">-</string>
     <string name="key_mult">*</string>
     <string name="key_div">/</string>
-    <string name="start_calculator"></string>
+    <string name="theme_1">theme-1</string>
+    <string name="theme_2">theme-2</string>
+    <string name="theme_3">theme-3</string>
 </resources>

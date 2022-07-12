@@ -2,6 +2,8 @@ package aleh.ahiyevich.calculator.calculator.model;
 
 public class CalculatorImpl implements Calculator {
 
+    // Опсиываем операции, которые необходимо будет выполнить программе после выбора
+    // enum выражения
     @Override
     public double perform(double argOne, double argTwo, Operator operator) {
         switch (operator) {
