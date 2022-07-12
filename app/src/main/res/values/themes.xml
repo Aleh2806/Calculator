@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyCalc" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorPrimaryVariant">@color/purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/pink</item>
+        <item name="colorSecondaryVariant">@color/light_blue</item>
+        <item name="colorOnSecondary">@color/red</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <item name="calcActionButton">@style/CalcButton</item>
+    </style>
+
+
+                    <!-- Создаем дополныительные варианты темы -->
+    <style name="Theme.MyCalc.V2">
+        <item name="calcActionButton">@style/CalcButton.V2</item>
+    </style>
+
+    <style name="Theme.MyCalc.V3">
+        <item name="calcActionButton">@style/CalcButton.V3</item>
+    </style>
+
+</resources>
