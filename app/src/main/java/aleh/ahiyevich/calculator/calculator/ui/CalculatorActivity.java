@@ -1,8 +1,15 @@
 package aleh.ahiyevich.calculator.calculator.ui;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +23,9 @@ import java.util.Map;
 import aleh.ahiyevich.calculator.R;
 import aleh.ahiyevich.calculator.calculator.model.CalculatorImpl;
 import aleh.ahiyevich.calculator.calculator.model.Operator;
+import aleh.ahiyevich.calculator.calculator.model.Theme;
+import aleh.ahiyevich.calculator.calculator.model.ThemeRepository;
+import aleh.ahiyevich.calculator.calculator.model.ThemeRepositoryImpl;
 import aleh.ahiyevich.calculator.calculator.presenter.CalculatorPresenter;
 
 public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
@@ -26,17 +36,16 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     //Создаем переменную типа CalculatorPresenter,чтобы позже можно было обращаться к классу CalculatorPresenter
     private CalculatorPresenter presenter;
 
+    private ThemeRepository themeRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Сохраняем настройки выбора пользователем темы
-        SharedPreferences sharedPreferences = getSharedPreferences("themes.xml", Context.MODE_PRIVATE);
-        // Сохраняем дефолтную тему в переменную
-        int theme = sharedPreferences.getInt("theme", R.style.Theme_MyCalc);
+        themeRepository = ThemeRepositoryImpl.getINSTANCE(this);
+
         // Изменяем тему до отрисовки Активити,т.к. после отрисовки Активити, отрисовка темы невозможна
-        setTheme(theme);
+        setTheme(themeRepository.getSavedTheme().getThemeRes());
 
         // Отрисываваем Активити
         setContentView(R.layout.activity_calculator);
@@ -119,57 +128,33 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         });
 
-        // Ищем все темы и сохраняем в переменные
-        Button themeOne = findViewById(R.id.theme_1);
-        Button themeTwo = findViewById(R.id.theme_2);
-        Button themeThree = findViewById(R.id.theme_3);
+        ActivityResultLauncher<Intent> themeLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
 
-        // Описываем выбор темы 1
-        if (themeOne != null) {
-            themeOne.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Описываем, какую тему необходимо выбрать
-                    sharedPreferences.edit()
-                            .putInt("theme", R.style.Theme_MyCalc)
-                            .commit();
+                    Theme selectedTheme = (Theme) intent.getSerializableExtra(SelectThemeActivity.EXTRA_THEME);
 
-                    recreate(); // пересоздаем Активити
+                    themeRepository.saveTheme(selectedTheme);
+                    recreate();
                 }
-            });
-        }
+            }
+        });
 
-        // Описываем выбор темы 2
-        if (themeTwo != null) {
-            themeTwo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Описываем, какую тему необходимо выбрать
-                    sharedPreferences.edit()
-                            .putInt("theme", R.style.Theme_MyCalc_V2)
-                            .commit();
+        // Вешаем кликер на кнопку с настрйоками темы
+        findViewById(R.id.settings).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Описываем переход на другую активити
+                Intent intent = new Intent(CalculatorActivity.this, SelectThemeActivity.class);
+                // Передаем данные в SelectThemeActivity
+                intent.putExtra(SelectThemeActivity.EXTRA_THEME, themeRepository.getSavedTheme());
 
-                    recreate(); // пересоздаем Активити
+                themeLauncher.launch(intent);
+            }
+        });
 
-                }
-            });
-        }
-
-        // Описываем выбор темы 3
-        if (themeThree != null) {
-            themeThree.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Описываем, какую тему необходимо выбрать
-                    sharedPreferences.edit()
-                            .putInt("theme", R.style.Theme_MyCalc_V3)
-                            .commit();
-
-                    recreate(); // пересоздаем Активити
-
-                }
-            });
-        }
 
         // Вешаем кликкер на кнопку равно и передаем в него метод для вычисления
         findViewById(R.id.key_equals).setOnClickListener(new View.OnClickListener() {

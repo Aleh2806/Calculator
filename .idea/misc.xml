@@ -9,10 +9,14 @@
         <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/btn_style_operator.xml" value="0.203" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/btn_style_result.xml" value="0.101" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/gradient.xml" value="0.1355" />
+        <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1325" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/drawable/rectangle.xml" value="0.203" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/layout-land/activity_calculator.xml" value="0.25" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/activity_calculator.xml" value="0.25" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/activity_select_theme.xml" value="0.2734375" />
+        <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/activity_selected_v2.xml" value="0.65375" />
+        <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/item_theme.xml" value="0.2734375" />
         <entry key="..\:/Home_works/Calculator/app/src/main/res/layout/second_variant.xml" value="0.25" />
       </map>
     </option>

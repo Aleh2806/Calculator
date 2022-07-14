@@ -34,4 +34,10 @@
     </style>
 
 
+    <style name="btn_site">
+        <item name="background">@drawable/gradient</item>
+
+
+    </style>
+
 </resources>
