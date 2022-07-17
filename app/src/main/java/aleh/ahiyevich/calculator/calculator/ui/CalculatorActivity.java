@@ -30,13 +30,19 @@ import aleh.ahiyevich.calculator.calculator.presenter.CalculatorPresenter;
 
 public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
 
+
+
     //Создаем переменную типа TextView,чтобы позже найти поле с выводом результата на экране
     private TextView resultView;
 
-    //Создаем переменную типа CalculatorPresenter,чтобы позже можно было обращаться к классу CalculatorPresenter
+    //Создаем переменную типа CalculatorPresenter,чтобы позже можно было обращаться к классу CalculatorPresenter и его методам
     private CalculatorPresenter presenter;
 
+    //Создаем переменную типа ThemeRepository,чтобы позже можно было обращаться к классу ThemeRepository и его методам
     private ThemeRepository themeRepository;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

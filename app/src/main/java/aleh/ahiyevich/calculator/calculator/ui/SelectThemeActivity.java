@@ -40,6 +40,7 @@ public class SelectThemeActivity extends AppCompatActivity {
 
         Theme selectedTheme = (Theme) intent.getSerializableExtra(EXTRA_THEME);
 
+        // Пробегаем по всему списку с помощью цикла
         for (Theme theme : themes) {
             // Преобразуем xml в view
             View itemView = getLayoutInflater().inflate(R.layout.item_theme, container, false);
@@ -76,6 +77,7 @@ public class SelectThemeActivity extends AppCompatActivity {
         }
 
 
+        // Ищем кнопку, вешаем на нее клмкер и обрабатываем нажатие - переход по ссылке(выход в сеть интернет)
         findViewById(R.id.button_site).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
